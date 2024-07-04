@@ -7,6 +7,7 @@ import Sidebar from './Components/Sidebar';
 import Home from './Components/Home';
 import About from './Components/About';
 import { useTranslation } from 'react-i18next';
+import Typical from 'react-typical';
 
 const theme = createTheme({
   palette: {
@@ -38,16 +39,19 @@ function App() {
   };
 
   const handleTouchEnd = () => {
-    if(touchEndX == 0){ 
-      return
+    if(touchEndX === 0){ 
+      return;
     }
     if (touchStartX - touchEndX > 80) {
       // Swipe left detected
       handleDrawerToggle();
     } 
   };
+
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    if(isMobile){
+      setMobileOpen(!mobileOpen);
+    }
   };
 
   const changeLanguage = (lng) => {
@@ -57,8 +61,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ display: 'flex' }} 
-          > 
+      <Box sx={{ display: 'flex' }}>
         {isMobile && (
           <IconButton
             color="inherit"
@@ -71,16 +74,38 @@ function App() {
           </IconButton>
         )}
         <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }} 
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}>
           <Button onClick={() => changeLanguage('en')}>English</Button>
           <Button onClick={() => changeLanguage('cz')}>Čeština</Button>
           {isMobile ? (
-            <Typography variant="h2">{t('welcome')}</Typography>
+            <>
+            <Typography variant="h2" mb={5}>
+              <Typical
+                steps={[t('welcome'), 2000]}
+                loop={1}
+                wrapper="span"
+              />
+            </Typography>
+             <Typography variant="p">
+              {t('introduction')}
+           </Typography>
+           </ >
           ) : (
-            <Typography variant="h1">{t('welcome')}</Typography>
+            <Box sx={{ flexGrow: 1, p: 1, pr: 30 }}>
+            <Typography variant="h1" mb={5}>
+              <Typical
+                steps={[t('welcome'), 2000]}
+                loop={1}
+                wrapper="span"
+              />
+            </Typography>
+            <Typography variant="p">
+              {t('introduction')}
+           </Typography>
+           </Box>
           )}
           <Home />
           <About />
