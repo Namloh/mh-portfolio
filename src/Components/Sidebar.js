@@ -1,24 +1,24 @@
 import React from 'react';
-import { List, ListItem, ListItemText, Drawer, Divider, SwipeableDrawer  } from '@mui/material';
+import { List, ListItem, ListItemText, Drawer, Divider, SwipeableDrawer } from '@mui/material';
 import { Link } from 'react-scroll';
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 
 const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
   const drawer = (
     <div>
       <Divider />
       <List>
-        <ListItem button>
-          <Link to="home" smooth={true} duration={500} onClick={handleDrawerToggle}>
+        <Link to="home" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ListItem button sx={{ '&:hover': { backgroundColor: '#333' }, transition: 'background-color 0.3s' }}>
             <ListItemText primary="Home" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link to="about" smooth={true} duration={500} onClick={handleDrawerToggle}>
+          </ListItem>
+        </Link>
+        <Link to="about" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ListItem button sx={{ '&:hover': { backgroundColor: '#333' }, transition: 'background-color 0.3s' }}>
             <ListItemText primary="About" />
-          </Link>
-        </ListItem>
+          </ListItem>
+        </Link>
       </List>
     </div>
   );
@@ -38,9 +38,10 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
           display: { xs: 'block', sm: 'block' },
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
-            width: drawerWidth,
-            backgroundColor: '#1e1e1e',
+            width: drawerWidth -30,
+            backgroundColor: '#111',
             color: '#ffffff',
+            padding: '16px',
           },
         }}
       >
@@ -57,6 +58,7 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
             width: drawerWidth,
             backgroundColor: '#1e1e1e',
             color: '#ffffff',
+            padding: '16px',
           },
         }}
         open
