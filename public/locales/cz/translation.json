@@ -1,6 +1,25 @@
 {
-    "welcome": "Vítejte na mém portfoliu",
-    "introduction": "Jmenuji se Matěj Holman. Jsem student IT původem z Liberce. Aktualně bydlím a studuji v Praze.",
-    "home": "Domů",
-    "about": "O mě"
-  }
+  "welcome": "Vítejte na mém portfoliu",
+  "introduction": "Jmenuji se Matěj Holman. Je mi {{age}} let a jsem student IT původem z Liberce. Aktuálně bydlím a studuji v Praze.",
+  "aboutText": "Mám vzdělání v oblasti IT a několik měsíců zkušeností v oboru, ale neustále se otevírám novým věcem. Moje hlavní programovací jazyky jsou <u>C#</u> a <u>JavaScript</u>, ale nebráním se ani dalším jako <u>Python</u> nebo <u>SQL</u>. Rozsáhle využívám <u>React</u> a <u>React Native</u> a mám zkušenosti také s <u>ASP.NET</u>. Mám certifikaci na úrovni <u>C1</u> v angličtině.",
+  "studies": "Vzdělání",
+  "school": "Střední průmyslová škola a Vyšší odborná škola, Liberec",
+  "schoolDesc": "Informační technologie",
+  "uni": "VŠE, Fakulta informatiky a statistiky, Praha",
+  "uniDesc": "Aplikovaná informatika",
+  "now": "nyní",
+  "about": "O mě",
+  "experience": "Zkušenosti",
+  "job1": "MAHLE Behr Mnichovo Hradiště",
+  "job1Description": "Firemní praxe, pomoc v IT oddělení",
+  "job2": "Kassua studio",
+  "job2Description": "Realizace návrhů webových aplikací pro klienty firmy, front end design",
+  "may": "Květen",
+  "february": "Únor",
+  "july": "Červenec",
+  "projects": "Projekty",
+  "project1": "MyMeal",
+  "project1Description": "Aplikace pro plánování jídel pro lepší přehled o výživě a dosažení cílů týkajících se hmotnosti",
+  "project2": "Webové stránky",
+  "project2Description": "Front end část stránek vytvořených pro Kassua studio "
+}

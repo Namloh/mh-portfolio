@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { useMediaQuery, Box, IconButton, Button, Typography } from '@mui/material';
+import { useMediaQuery, Box, IconButton, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Sidebar from './Components/Sidebar';
-import Home from './Components/Home';
 import About from './Components/About';
 import { useTranslation } from 'react-i18next';
-import { TypeAnimation } from 'react-type-animation';
+
 import Studies from './Components/Studies';
+import Experience from './Components/Experience';
+import Projects from './Components/Projects';
 
 const theme = createTheme({
   palette: {
@@ -30,27 +31,30 @@ const theme = createTheme({
 });
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-
   let touchStartX = 0;
   let touchEndX = 0;
+  let touchStartY = 0;
+  let touchEndY = 0;
 
   const handleTouchStart = (e) => {
     touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
   };
 
   const handleTouchMove = (e) => {
     touchEndX = e.touches[0].clientX;
+    touchEndY = e.touches[0].clientY;
   };
 
   const handleTouchEnd = () => {
     if (touchEndX === 0) {
       return;
     }
-    if (touchStartX - touchEndX > 100) {
+    if (touchStartX - touchEndX > 100 && Math.abs(touchStartY-touchEndY) < 100) { 
       // Swipe left detected
       handleDrawerToggle();
     }
@@ -66,6 +70,7 @@ function App() {
     i18n.changeLanguage(lng);
   };
 
+  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -84,36 +89,23 @@ function App() {
         <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
         <Box
           component="main"
-          sx={{ flexGrow: 1, p: 3 }}
+          sx={{ flexGrow: 1, p: 3}}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-        >
+        > 
           <Button color='inherit' variant={i18n.language === "en" ? '' : "outlined"} onClick={() => changeLanguage('en')}>English</Button>
           <Button color='inherit' variant={i18n.language === "cz" ? '' : "outlined"} onClick={() => changeLanguage('cz')}>Čeština</Button>
         
-            <Box>
-              <Typography variant="h1" fontSize={isMobile? 54 : 80} mb={isMobile ? 4 : 5} mt={2}>
-                <TypeAnimation
-                  key={ t('welcome')} 
-                  sequence={[
-                    t('welcome')
-                  ]}
-                  wrapper="span"
-                  cursor={true}
-                  repeat={0}
-                />
-              </Typography>
-              <Typography variant="p" fontSize={isMobile ? 18 : 22}>{t('introduction')}</Typography>
-            </Box>
+          <Box pl={isMobile ? 0 : 8} pr={isMobile ? 0 : 40}>
+            <About isMobile={isMobile}/>
+            <Studies />
+            <Experience/>
+            <Projects />
+          </Box>
 
-          <Studies />
-          <Home />
-          <About /> 
-       
         </Box>
       </Box>
-    
     </ThemeProvider>
   );
 }

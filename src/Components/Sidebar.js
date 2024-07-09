@@ -1,22 +1,59 @@
-import React from 'react';
-import { List, ListItem, ListItemText, Drawer, Divider, SwipeableDrawer } from '@mui/material';
+import React, { useEffect } from 'react';
+import { List, ListItem, ListItemText, Drawer, Divider, SwipeableDrawer, useTheme } from '@mui/material';
 import { Link } from 'react-scroll';
-
-const drawerWidth = 250;
+import { useTranslation } from 'react-i18next';
 
 const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
+  const drawerWidth = 250;
+  const theme = useTheme();
+  const { t } = useTranslation();
+
+  // Function to store the scroll position
+  const storeScrollPosition = () => {
+    localStorage.setItem('scrollPosition', window.scrollY);
+  };
+
+  // Function to restore the scroll position
+  const restoreScrollPosition = () => {
+    const scrollPosition = localStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+      window.scrollTo(0, parseInt(scrollPosition, 10));
+    }
+  };
+
+  // Use effects to manage scroll position before and after drawer toggle
+  useEffect(() => {
+    if (mobileOpen) {
+      storeScrollPosition();
+    }
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    restoreScrollPosition();
+  }, [mobileOpen]);
+
   const drawer = (
     <div>
       <Divider />
       <List>
-        <Link to="home" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ListItem button sx={{ '&:hover': { backgroundColor: '#333' }, transition: 'background-color 0.3s' }}>
-            <ListItemText primary="Home" />
+        <Link to="about" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('about')} />
           </ListItem>
         </Link>
-        <Link to="about" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ListItem button sx={{ '&:hover': { backgroundColor: '#333' }, transition: 'background-color 0.3s' }}>
-            <ListItemText primary="About" />
+        <Link to="studies" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('studies')} />
+          </ListItem>
+        </Link>
+        <Link to="experience" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('experience')} />
+          </ListItem>
+        </Link>
+        <Link to="projects" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('projects')} />
           </ListItem>
         </Link>
       </List>
@@ -25,12 +62,12 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
 
   return (
     <nav aria-label="mailbox folders">
-      {/* Mobile drawer */}
       <SwipeableDrawer
-        anchor='right'
+        anchor="right"
         variant="temporary"
         open={mobileOpen}
         onClose={handleDrawerToggle}
+        onOpen={handleDrawerToggle}
         ModalProps={{
           keepMounted: true, // Better open performance on mobile.
         }}
@@ -38,8 +75,8 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
           display: { xs: 'block', sm: 'block' },
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
-            width: drawerWidth -30,
-            backgroundColor: '#111',
+            width: drawerWidth - 30,
+            backgroundColor: theme.palette.background.default,
             color: '#ffffff',
             padding: '16px',
           },
@@ -47,9 +84,8 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
       >
         {drawer}
       </SwipeableDrawer>
-      {/* Desktop drawer */}
       <Drawer
-        anchor='right'
+        anchor="right"
         variant="permanent"
         sx={{
           display: { xs: 'none', sm: 'none', md: 'block' },
