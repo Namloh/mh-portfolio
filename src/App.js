@@ -6,10 +6,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Sidebar from './Components/Sidebar';
 import About from './Components/About';
 import { useTranslation } from 'react-i18next';
-
 import Studies from './Components/Studies';
 import Experience from './Components/Experience';
 import Projects from './Components/Projects';
+import Contact from './Components/Contact';
 
 const theme = createTheme({
   palette: {
@@ -89,21 +89,24 @@ function App() {
         <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
         <Box
           component="main"
-          sx={{ flexGrow: 1, p: 3}}
+          sx={{ flexGrow: 1}}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         > 
-          <Button color='inherit' variant={i18n.language === "en" ? '' : "outlined"} onClick={() => changeLanguage('en')}>English</Button>
-          <Button color='inherit' variant={i18n.language === "cz" ? '' : "outlined"} onClick={() => changeLanguage('cz')}>Čeština</Button>
-        
-          <Box pl={isMobile ? 0 : 8} pr={isMobile ? 0 : 40}>
-            <About isMobile={isMobile}/>
-            <Studies />
-            <Experience/>
-            <Projects />
+          <Box sx={{p: 3, pb: 0}}>
+            <Button color='inherit' variant={i18n.language === "en" ? '' : "outlined"} onClick={() => changeLanguage('en')}>English</Button>
+            <Button color='inherit' variant={i18n.language === "cz" ? '' : "outlined"} onClick={() => changeLanguage('cz')}>Čeština</Button>
+          
+            <Box pl={isMobile ? 0 : 8} pr={isMobile ? 0 : 40}>
+              <About isMobile={isMobile}/>
+              <Studies />
+              <Experience/>
+              <Projects />
+            </Box>
           </Box>
 
+          <Contact />
         </Box>
       </Box>
     </ThemeProvider>

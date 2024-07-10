@@ -56,6 +56,11 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
             <ListItemText primary={t('projects')} />
           </ListItem>
         </Link>
+        <Link to="contact" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('contactMe')} />
+          </ListItem>
+        </Link>
       </List>
     </div>
   );
@@ -84,6 +89,8 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
       >
         {drawer}
       </SwipeableDrawer>
+      
+      {/*desktop drawer*/}
       <Drawer
         anchor="right"
         variant="permanent"

@@ -21,5 +21,6 @@
   "project1": "MyMeal", 
   "project1Description": "A meal planning app for easier nutrition overview and achieving weight goals. Built with React Native and Expo",
   "project2": "Website designs",
-  "project2Description": "Front end website designs I did for Kassua studio"
+  "project2Description": "Front end website designs I did for Kassua studio",
+  "contactMe": "Contact Me"
 }

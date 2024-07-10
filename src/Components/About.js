@@ -26,11 +26,11 @@ const About = ({ isMobile }) => {
         />
       </Typography>
 
-      <Typography variant="p" fontSize={isMobile ? 18 : 22}>
+      <Typography variant="p" fontSize={isMobile ? 18 : 21}>
         {t('introduction', { age })}
       </Typography>
 
-      <Typography variant="body1" fontSize={isMobile ? 16 : 20} mt={2}>
+      <Typography variant="body1" fontSize={isMobile ? 18 : 21} mt={2}>
         <span dangerouslySetInnerHTML={{ __html: t('aboutText') }} />
       </Typography>
     </Box>
