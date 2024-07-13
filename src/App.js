@@ -95,10 +95,10 @@ function App() {
           onTouchEnd={handleTouchEnd}
         > 
           <Box sx={{p: 3, pb: 0}}>
-            <Button color='inherit' variant={i18n.language === "en" ? '' : "outlined"} onClick={() => changeLanguage('en')}>English</Button>
-            <Button color='inherit' variant={i18n.language === "cz" ? '' : "outlined"} onClick={() => changeLanguage('cz')}>Čeština</Button>
+            <Button color='inherit' variant={i18n.language === "en" ? 'outlined' : ""} onClick={() => changeLanguage('en')}>English</Button>
+            <Button color='inherit' variant={i18n.language === "cz" ? 'outlined' : ""} onClick={() => changeLanguage('cz')}>Čeština</Button>
           
-            <Box pl={isMobile ? 0 : 8} pr={isMobile ? 0 : 40}>
+            <Box pl={isMobile ? 0 : 8} pr={isMobile ? 0 : 8}>
               <About isMobile={isMobile}/>
               <Studies />
               <Experience/>

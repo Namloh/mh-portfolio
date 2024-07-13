@@ -19,8 +19,10 @@
   "july": "Červenec",
   "projects": "Projekty",
   "project1": "MyMeal",
-  "project1Description": "Aplikace pro plánování jídel pro lepší přehled o výživě a dosažení cílů týkajících se hmotnosti",
+  "project1Description": "Aplikace pro plánování jídel pro lepší přehled o výživě a dosažení cílů týkajících se stravování a váhy, pomocí React Native a Expo",
   "project2": "Webové stránky",
-  "project2Description": "Front end část stránek vytvořených pro Kassua studio",
+  "project2Description": "Front end část stránek vytvořených pro Kassua studio, HTML, CSS a Javascript",
+  "project3": "Galerie",
+  "project3Description": "Webová aplikace umožňující nahrávání a zobrazování obrázků od uživatelů, ASP.NET, C#",
   "contactMe": "Kontakt"
 }

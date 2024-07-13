@@ -27,20 +27,11 @@ const Contact = () => {
         backgroundColor: 'background.paper',
         padding: '20px',
         textAlign: 'center',
-        marginTop: '20px',
+        marginTop: 8,
         borderTop: '1px solid',
         borderColor: 'divider',
-        width: '100%', // Full width by default
-        position: 'relative', // Ensure the footer stays within the main content area
-        ...(isMobile && {
-          marginLeft: 0, // No margin on mobile
-          marginRight: 0, // No margin on mobile
-          width: '100%', // Full width on mobile
-        }),
-        ...(!isMobile && {
-          marginRight: '240px', // Adjusted for the sidebar width on larger screens
-          width: `calc(100% - 240px)`, // Ensure the width excludes the sidebar width on larger screens
-        }),
+        position: 'relative', 
+        width: '100%', 
       }}
     >
       <Typography variant="h5" color="text.primary" gutterBottom>

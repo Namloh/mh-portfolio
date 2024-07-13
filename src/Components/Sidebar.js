@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { List, ListItem, ListItemText, Drawer, Divider, SwipeableDrawer, useTheme } from '@mui/material';
+import { List, ListItem, ListItemText, Divider, SwipeableDrawer, useTheme } from '@mui/material';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 
@@ -90,7 +90,7 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
         {drawer}
       </SwipeableDrawer>
       
-      {/*desktop drawer*/}
+      {/*desktop drawer
       <Drawer
         anchor="right"
         variant="permanent"
@@ -108,6 +108,7 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
       >
         {drawer}
       </Drawer>
+      */}
     </nav>
   );
 };

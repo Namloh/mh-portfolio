@@ -18,15 +18,24 @@ const Studies = () => {
         2020 - 2024
       </Typography>
       <Typography variant="body1" sx={{ fontSize: isMobile ? '1rem' : '1.25rem', fontWeight: 'bold', color: theme.palette.text.primary, display: 'inline-block' }}>
-      {t('school')}
+        {t('school')}
         <IconButton
-        href="https://www.prumyslovkaliberec.cz"
-        target="_blank"
-        rel="noopener noreferrer"
-        sx={{ color: theme.palette.text.primary, marginLeft: 1, verticalAlign: 'middle' }}
-      >
-        <ArrowForwardIcon />
-      </IconButton>
+          href="https://www.prumyslovkaliberec.cz"
+          target="_blank"
+          rel="noopener noreferrer"
+          disableRipple
+          sx={{ 
+            color: theme.palette.text.primary, 
+            marginLeft: 1, 
+            verticalAlign: 'middle', 
+            transition: 'transform 0.3s ease', 
+            '&:hover': {
+              transform: 'translateX(6px)',
+            }
+          }}
+        >
+          <ArrowForwardIcon />
+        </IconButton>
       </Typography>
       <Typography variant="body2" sx={{ fontSize: isMobile ? '0.875rem' : '1rem', color: theme.palette.text.secondary, marginTop: '5px' }}>
         {t('schoolDesc')}
@@ -38,15 +47,24 @@ const Studies = () => {
         2024 - {t('now')}
       </Typography>
       <Typography variant="body1" sx={{ fontSize: isMobile ? '1rem' : '1.25rem', fontWeight: 'bold', color: theme.palette.text.primary, display: 'inline-block' }}>
-      {t('uni')}
+        {t('uni')}
         <IconButton
-        href="https://fis.vse.cz"
-        target="_blank"
-        rel="noopener noreferrer"
-        sx={{ color: theme.palette.text.primary, marginLeft: 1, verticalAlign: 'middle' }}
-      >
-        <ArrowForwardIcon />
-      </IconButton>
+          href="https://fis.vse.cz"
+          target="_blank"
+          rel="noopener noreferrer"
+          disableRipple
+          sx={{ 
+            color: theme.palette.text.primary, 
+            marginLeft: 1, 
+            verticalAlign: 'middle', 
+            transition: 'transform 0.3s ease', 
+            '&:hover': {
+              transform: 'translateX(6px)',
+            }
+          }}
+        >
+          <ArrowForwardIcon />
+        </IconButton>
       </Typography>
       <Typography variant="body2" sx={{ fontSize: isMobile ? '0.875rem' : '1rem', color: theme.palette.text.secondary, marginTop: '5px' }}>
         {t('uniDesc')}

@@ -23,7 +23,11 @@ const Experience = () => {
           href="https://www.mahle.com/en/about-mahle/locations/6104.jsp"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: theme.palette.text.primary, marginLeft: 1, verticalAlign: 'middle' }}
+          disableRipple
+          sx={{ color: theme.palette.text.primary, marginLeft: 1, verticalAlign: 'middle',  transition: 'transform 0.3s ease', 
+            '&:hover': {
+              transform: 'translateX(6px)',
+            } }}
         >
           <ArrowForwardIcon />
         </IconButton>
@@ -43,7 +47,11 @@ const Experience = () => {
           href="https://www.kassua.cz/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: theme.palette.text.primary, marginLeft: 1, verticalAlign: 'middle' }}
+          disableRipple
+          sx={{ color: theme.palette.text.primary, marginLeft: 1, verticalAlign: 'middle',  transition: 'transform 0.3s ease', 
+            '&:hover': {
+              transform: 'translateX(6px)',
+            } }}
         >
           <ArrowForwardIcon />
         </IconButton>
