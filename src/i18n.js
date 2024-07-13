@@ -11,6 +11,9 @@ i18n
     supportedLngs: ['en', 'cz'],
     fallbackLng: 'en',
     debug: true,
+    interpolation: {
+      escapeValue: false 
+    },
     detection: {
       order: ['queryString', 'cookie'],
       cache: ['cookie']
