@@ -19,7 +19,7 @@ i18n
       cache: ['cookie']
     },
     backend: {
-      loadPath: 'mh-portfolio/locales/{{lng}}/translation.json',
+      loadPath: 'locales/{{lng}}/translation.json',
     },
   });
 
