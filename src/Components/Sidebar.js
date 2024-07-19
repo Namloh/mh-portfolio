@@ -34,31 +34,31 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
 
   const drawer = (
     <div>
-      <Divider />
+      <Divider sx={{ backgroundColor: theme.palette.divider }} />
       <List>
         <Link to="about" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
-            <ListItemText primary={t('about')} />
+          <ListItem button sx={{ '&:hover': { backgroundColor: theme.palette.action.hover }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('about')} sx={{ color: theme.palette.text.primary }} />
           </ListItem>
         </Link>
         <Link to="studies" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
-            <ListItemText primary={t('studies')} />
+          <ListItem button sx={{ '&:hover': { backgroundColor: theme.palette.action.hover }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('studies')} sx={{ color: theme.palette.text.primary }} />
           </ListItem>
         </Link>
         <Link to="experience" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
-            <ListItemText primary={t('experience')} />
+          <ListItem button sx={{ '&:hover': { backgroundColor: theme.palette.action.hover }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('experience')} sx={{ color: theme.palette.text.primary }} />
           </ListItem>
         </Link>
         <Link to="projects" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
-            <ListItemText primary={t('projects')} />
+          <ListItem button sx={{ '&:hover': { backgroundColor: theme.palette.action.hover }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('projects')} sx={{ color: theme.palette.text.primary }} />
           </ListItem>
         </Link>
         <Link to="contact" smooth={true} duration={500} onClick={handleDrawerToggle} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ListItem button sx={{ '&:hover': { backgroundColor: '#444' }, transition: 'background-color 0.3s' }}>
-            <ListItemText primary={t('contactMe')} />
+          <ListItem button sx={{ '&:hover': { backgroundColor: theme.palette.action.hover }, transition: 'background-color 0.3s' }}>
+            <ListItemText primary={t('contactMe')} sx={{ color: theme.palette.text.primary }} />
           </ListItem>
         </Link>
       </List>
@@ -82,7 +82,7 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
             boxSizing: 'border-box',
             width: drawerWidth - 30,
             backgroundColor: theme.palette.background.default,
-            color: '#ffffff',
+            color: theme.palette.text.primary,
             padding: '16px',
           },
         }}
@@ -90,7 +90,8 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
         {drawer}
       </SwipeableDrawer>
       
-      {/*desktop drawer
+      {/* Uncomment for desktop drawer if needed */}
+      {/* 
       <Drawer
         anchor="right"
         variant="permanent"
@@ -99,8 +100,8 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
           '& .MuiDrawer-paper': {
             boxSizing: 'border-box',
             width: drawerWidth,
-            backgroundColor: '#1e1e1e',
-            color: '#ffffff',
+            backgroundColor: theme.palette.background.default,
+            color: theme.palette.text.primary,
             padding: '16px',
           },
         }}

@@ -15,18 +15,18 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     background: {
-      default: '#121212',
-      paper: '#1e1e1e',
+      default: '#1e3a4c', // Dark blue gray
+      paper: '#294c60',   // Medium blue gray
     },
     text: {
-      primary: '#ffffff',
+      primary: '#daeafa', // Light blue gray
     },
     button: {
       outlinedPrimary: {
-        color: '#ffffff', 
-        borderColor: '#ffffff', 
+        color: '#d4e4f7',
+        borderColor: '#d4e4f7',
       },
-    }
+    },
   },
 });
 
@@ -54,7 +54,7 @@ function App() {
     if (touchEndX === 0) {
       return;
     }
-    if (touchStartX - touchEndX > 100 && Math.abs(touchStartY-touchEndY) < 100) { 
+    if (touchStartX - touchEndX > 100 && Math.abs(touchStartY - touchEndY) < 100) { 
       // Swipe left detected
       handleDrawerToggle();
     }
@@ -70,7 +70,6 @@ function App() {
     i18n.changeLanguage(lng);
   };
 
-  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -89,23 +88,38 @@ function App() {
         <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
         <Box
           component="main"
-          sx={{ flexGrow: 1}}
+          sx={{ flexGrow: 1 }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-        > 
-          <Box sx={{p: 3, pb: 0}}>
-            <Button color='inherit' variant={i18n.language === "en" ? 'outlined' : ""} onClick={() => changeLanguage('en')}>English</Button>
-            <Button color='inherit' variant={i18n.language === "cz" ? 'outlined' : ""} onClick={() => changeLanguage('cz')}>Čeština</Button>
-          
+        >
+          <Box sx={{ p: 3, pb: 0 }}>
+            <Button color="inherit" variant={i18n.language === 'en' ? 'outlined' : ''} onClick={() => changeLanguage('en')}>
+              English
+            </Button>
+            <Button color="inherit" variant={i18n.language === 'cz' ? 'outlined' : ''} onClick={() => changeLanguage('cz')}>
+              Čeština
+            </Button>
+
             <Box pl={isMobile ? 0 : 8} pr={isMobile ? 0 : 8}>
-              <About isMobile={isMobile}/>
-              <Studies />
-              <Experience/>
+              <About isMobile={isMobile} />
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: isMobile ? 'column' : 'row',
+                  gap: isMobile ? 0 : 3,
+                }}
+              >
+                <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: "100%"}}>
+                  <Studies />
+                </Box>
+                <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: "100%"}}>
+                  <Experience />
+                </Box>
+              </Box>
               <Projects />
             </Box>
           </Box>
-
           <Contact />
         </Box>
       </Box>
