@@ -1,7 +1,7 @@
 {
   "welcome": "Vítejte na mém portfoliu",
   "introduction": "Jmenuji se Matěj Holman. Je mi {{age}} let a jsem student IT původem z Liberce. Aktuálně bydlím a studuji v Praze.",
-  "aboutText": "Mám vzdělání v oblasti IT a několik měsíců zkušeností v oboru, ale neustále se učím novým věcem. Moje hlavní programovací jazyky jsou <u>C#</u> a <u>JavaScript</u>, ale nebráním se ani dalším jako <u>Python</u> nebo <u>SQL</u>. Rozsáhle využívám <u>React</u> a <u>React Native</u> a mám zkušenosti také s <u>ASP.NET</u>. Mám certifikaci na úrovni <u>C1</u> v angličtině.",
+  "aboutText": "Mám vzdělání v oblasti IT a několik měsíců zkušeností v oboru a neustále se učím novým věcem. Moje hlavní programovací jazyky jsou <u>C#</u> a <u>JavaScript</u>, ale nebráním se ani dalším jako <u>Python</u> nebo <u>SQL</u>. Rozsáhle využívám <u>React</u> a <u>React Native</u> a mám zkušenosti také s <u>ASP.NET</u>. Mám certifikaci na úrovni <u>C1</u> v angličtině.",
   "studies": "Vzdělání",
   "school": "Střední průmyslová škola a Vyšší odborná škola, Liberec",
   "schoolDesc": "Informační technologie",
@@ -9,7 +9,7 @@
   "uniDesc": "Aplikovaná informatika",
   "now": "dnes",
   "about": "O mě",
-  "experience": "Zkušenosti",
+  "experience": "Praxe",
   "job1": "MAHLE Behr Mnichovo Hradiště",
   "job1Description": "Firemní praxe, pomoc v IT oddělení",
   "job2": "Kassua studio",
