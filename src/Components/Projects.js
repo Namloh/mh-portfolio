@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Typography, useMediaQuery, useTheme, IconButton, Divider, Link } from '@mui/material';
+import { Typography, useMediaQuery, useTheme, IconButton, Divider, Link } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useTranslation } from 'react-i18next';
+import HoverSection from './HoverSection';
 
 const Projects = () => {
   const theme = useTheme();
@@ -9,7 +10,9 @@ const Projects = () => {
   const { t } = useTranslation();
 
   return (
-    <Box id="projects" sx={{ padding: '25px 20px', backgroundColor: theme.palette.background.paper, borderRadius: '8px', boxShadow: 3, marginTop: 5 }}>
+ 
+    <HoverSection id="projects" sx={{padding: '25px 20px', backgroundColor: theme.palette.background.paper, borderRadius: '8px', boxShadow: 3, marginTop: 5 }}>
+     
       <Typography variant="h2" sx={{ fontSize: isMobile ? '2rem' : '2.5rem', marginBottom: '20px', color: theme.palette.text.primary }}>
         {t('projects')}
       </Typography>
@@ -145,7 +148,8 @@ const Projects = () => {
       <Typography variant="body2" sx={{ fontSize: '1rem', color: theme.palette.text.secondary, marginTop: '5px' }}>
         {t('project5Description')}
       </Typography>
-    </Box>
+   
+    </HoverSection>
   );
 };
 

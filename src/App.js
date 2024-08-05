@@ -109,15 +109,17 @@ function App() {
                   flexDirection: isMobile ? 'column' : 'row',
                   gap: isMobile ? 0 : 3,
                 }}
-              >
-                <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: "100%"}}>
-                  <Studies />
-                </Box>
-                <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: "100%"}}>
+              >       
+                <Box  sx={{ flex: 1, display: 'flex', flexDirection: 'column'}}>
                   <Experience />
-                </Box>
+                </Box >
+                <Box  sx={{ flex: 1, display: 'flex', flexDirection: 'column'}}>
+                  <Studies />
+                </Box >
               </Box>
+
               <Projects />
+           
             </Box>
           </Box>
           <Contact />
