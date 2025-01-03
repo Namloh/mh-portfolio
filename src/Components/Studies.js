@@ -10,7 +10,7 @@ const Studies = () => {
   const { t } = useTranslation();
 
   return (
-    <HoverSection id="studies" sx={{ padding: '25px 20px', backgroundColor: theme.palette.background.paper, borderRadius: '8px', boxShadow: 3,  marginTop: isMobile ? 5 : 0, height: "75%" }}>
+    <HoverSection id="studies" sx={{ padding: '25px 20px', backgroundColor: theme.palette.background.paper, borderRadius: '8px', boxShadow: 3,  marginTop: isMobile ? 5 : 0}}>
       <Typography variant="h2" sx={{ fontSize: isMobile ? '2rem' : '2.5rem', marginBottom: '20px', color: theme.palette.text.primary }}>
         {t('studies')}
       </Typography>

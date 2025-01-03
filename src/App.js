@@ -10,6 +10,7 @@ import Studies from './Components/Studies';
 import Experience from './Components/Experience';
 import Projects from './Components/Projects';
 import Contact from './Components/Contact';
+import AnimatedSection from './Components/AnimatedSection';
 
 const theme = createTheme({
   palette: {
@@ -86,42 +87,49 @@ function App() {
           </IconButton>
         )}
         <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
-        <Box
-          component="main"
-          sx={{ flexGrow: 1 }}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <Box sx={{ p: 3, pb: 0 }}>
-            <Button color="inherit" variant={i18n.language === 'en' ? 'outlined' : ''} onClick={() => changeLanguage('en')}>
-              English
-            </Button>
-            <Button color="inherit" variant={i18n.language === 'cz' ? 'outlined' : ''} onClick={() => changeLanguage('cz')}>
-              Čeština
-            </Button>
+            <Box
+              component="main"
+              sx={{ flexGrow: 1 }}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+            <Box sx={{ p: 3, pb: 0 }}>
+              <Button color="inherit" variant={i18n.language === 'en' ? 'outlined' : ''} onClick={() => changeLanguage('en')}>
+                English
+              </Button>
+              <Button color="inherit" variant={i18n.language === 'cz' ? 'outlined' : ''} onClick={() => changeLanguage('cz')}>
+                Čeština
+              </Button>
 
-            <Box pl={isMobile ? 0 : 8} pr={isMobile ? 0 : 8}>
-              <About isMobile={isMobile} />
+              <Box pl={isMobile ? 0 : 8} pr={isMobile ? 0 : 8}>
+                <About isMobile={isMobile} />
+
+              <AnimatedSection>
+                <Projects />
+              </AnimatedSection>
+
               <Box
                 sx={{
                   display: 'flex',
                   flexDirection: isMobile ? 'column' : 'row',
                   gap: isMobile ? 0 : 3,
                 }}
-              >       
-                <Box  sx={{ flex: 1, display: 'flex', flexDirection: 'column'}}>
-                  <Experience />
-                </Box >
-                <Box  sx={{ flex: 1, display: 'flex', flexDirection: 'column'}}>
-                  <Studies />
-                </Box >
-              </Box>
+              >
+                <AnimatedSection>
+                  <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <Experience />
+                  </Box>
+                </AnimatedSection>
 
-              <Projects />
-           
+                <AnimatedSection>
+                  <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <Studies />
+                  </Box>
+                </AnimatedSection>
+              </Box>
             </Box>
-          </Box>
+          </Box>  
           <Contact />
         </Box>
       </Box>

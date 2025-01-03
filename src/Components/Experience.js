@@ -16,6 +16,36 @@ const Experience = () => {
       </Typography>
 
       <Typography variant="body1" sx={{ fontSize: '1rem', color: theme.palette.text.secondary, marginBottom: '10px', marginTop: '20px' }}>
+        {t('september')} 2024 - {t('december')} 2024
+      </Typography>
+      <Link
+        href="https://www.icnet.cz/"
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          textDecoration: 'none',
+          color: theme.palette.text.primary,
+          display: 'flex',
+          alignItems: 'center',
+          marginBottom: '10px',
+          cursor: 'pointer',
+          '&:hover .MuiIconButton-root': { transform: 'translateX(6px)' },
+        }}
+      >
+        <Typography variant="body1" sx={{ fontSize: isMobile ? '1.1rem' : '1.25rem', fontWeight: 'bold', display: 'inline-block' }}>
+          {t('job4')}
+        </Typography>
+        <IconButton disableRipple sx={{ color: theme.palette.text.primary, marginLeft: 1, verticalAlign: 'middle', transition: 'transform 0.3s ease' }}>
+          <ArrowForwardIcon />
+        </IconButton>
+      </Link>
+      <Typography variant="body2" sx={{ fontSize: '1rem', color: theme.palette.text.secondary, marginTop: '5px' }}>
+        {t('job4Description')}
+      </Typography>
+
+      <Divider sx={{ my: 2 }} />
+
+      <Typography variant="body1" sx={{ fontSize: '1rem', color: theme.palette.text.secondary, marginBottom: '10px', marginTop: '20px' }}>
         {t('august')} 2023 - {t('september')} 2023
       </Typography>
       <Link

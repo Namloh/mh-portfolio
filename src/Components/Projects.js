@@ -11,7 +11,7 @@ const Projects = () => {
 
   return (
  
-    <HoverSection id="projects" sx={{padding: '25px 20px', backgroundColor: theme.palette.background.paper, borderRadius: '8px', boxShadow: 3, marginTop: 5 }}>
+    <HoverSection id="projects" sx={{padding: '25px 20px', backgroundColor: theme.palette.background.paper, borderRadius: '8px', boxShadow: 3, marginBottom: '24px' }}>
      
       <Typography variant="h2" sx={{ fontSize: isMobile ? '2rem' : '2.5rem', marginBottom: '20px', color: theme.palette.text.primary }}>
         {t('projects')}
