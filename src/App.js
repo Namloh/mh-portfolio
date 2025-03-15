@@ -116,18 +116,19 @@ function App() {
                   gap: isMobile ? 0 : 3,
                 }}
               >
-                <AnimatedSection>
-                  <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                    <Experience />
-                  </Box>
-                </AnimatedSection>
+                <Box sx={{ flex: '3'}}> {/* uvozovky musi byt na scaling ugh */}
+                  <AnimatedSection>
+                    <Experience/>
+                  </AnimatedSection>
+                </Box>
 
-                <AnimatedSection>
-                  <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                    <Studies />
-                  </Box>
-                </AnimatedSection>
+                <Box sx={{ flex: '2'}}> {/* uvozovky musi byt na scaling ugh */}
+                  <AnimatedSection>
+                  <Studies/>
+                  </AnimatedSection>
+                </Box>
               </Box>
+
             </Box>
           </Box>  
           <Contact />

@@ -48,12 +48,12 @@ const HoverSection = ({ children, sx, ...props }) => {
           right: 0,
           bottom: 0,
           background: `radial-gradient(
-            circle ${isHovering ? '600px' : '0px'} at ${mousePosition.x}px ${mousePosition.y}px,
-            rgba(255, 255, 255, 0.05),
+            circle ${isHovering ? '400px' : '0px'} at ${mousePosition.x}px ${mousePosition.y}px,
+            rgba(255, 255, 255, 0.04),
             rgba(255, 255, 255, 0) 100%
           )`,
           opacity: isHovering ? 1 : 0,
-          transition: 'opacity 0.3s ease, background 0.3s ease',
+          transition: 'opacity 0.0001s ease, background 0.0001s ease',
           pointerEvents: 'none',
         },
       }}

@@ -14,7 +14,7 @@ const About = ({ isMobile }) => {
   const age = calculateAge(2005);
 
   return (
-    <Box id="about" sx={{ mb: 8 }}>
+    <Box id="about" sx={{ mb: 5 }}>
       <Typography variant="h1" fontSize={isMobile ? "3rem" : "5.5rem"} mb={4} mt={4}>
         <TypeAnimation
           key={t('welcome')}
